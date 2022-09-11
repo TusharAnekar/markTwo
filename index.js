@@ -14,25 +14,19 @@ console.log(
   ".\n Here are the FAQ/rules:\n 1.There are 3 levels in this quiz and every level will have 5 questions for 1 point.\n 2. You will only be able to play level 2 if you get 5 points and level 3 if you get 10 points.\n SIMPLE RULES LET'S PLAY\n\n"
 );
 
-console.log("Just enter 1,2,3 or 0 as answer.");
+console.log("Please answer the questions by entering [a,b,c] or [A, B, C]");
 
 function play(question, answer) {
-  var index = readlineSync.keyInSelect(options, question);
+  var userAnswer = readlineSync.question(question);
 
-  if (options[index] === undefined) {
-    console.log('Thank you for playing this game.');
-    return false;
+  if (userAnswer.toUpperCase() === answer) {
+    console.log('You are right!');
+    score++;
   } else {
-    if (options[index] === answer) {
-      console.log('You are right!');
-      score++;
-    } else {
-      console.log('You are wrong');
-    }
-    console.log('The score is ' + score);
-    console.log('--------------------------------------');
-    return true;
+    console.log('You are wrong');
   }
+  console.log('The score is ' + score);
+  console.log('--------------------------------------');
 }
 
 var levelOne = [
@@ -63,10 +57,7 @@ var levelOne = [
 ];
 
 for (var i = 0; i < levelOne.length; i++) {
-  if (play(levelOne[i].question, levelOne[i].answer) === true) { }
-  else {
-    break;
-  }
+  play(levelOne[i].question, levelOne[i].answer);
 }
 
 console.log('\n\n***********************************');
@@ -108,10 +99,7 @@ if (score === 5) {
   ];
 
   for (var i = 0; i < levelTwo.length; i++) {
-    if (play(levelTwo[i].question, levelTwo[i].answer) === true) { }
-    else {
-      break;
-    }
+    play(levelTwo[i].question, levelTwo[i].answer);
   }
 
   console.log('\n\n***********************************');
@@ -158,10 +146,7 @@ if (score === 10) {
   ];
 
   for (var i = 0; i < levelThree.length; i++) {
-    if (play(levelThree[i].question, levelThree[i].answer) === true) { }
-    else {
-      break;
-    }
+    play(levelThree[i].question, levelThree[i].answer);
   }
 
   console.log('\n\n***********************************');
