@@ -11,8 +11,10 @@ var userName = readlineSync.question('What is your name? ');
 console.log(
   'Welcome ' +
   userName +
-  ".\n Here are the FAQ/rules:\n 1.There are 3 levels in this quiz and every level will have 5 questions for 1 point.\n 2. You will only be able to play level 2 if you get 5 points and level 3 if you get 10 points.\n SIMPLE RULES LET'S PLAY"
+  ".\n Here are the FAQ/rules:\n 1.There are 3 levels in this quiz and every level will have 5 questions for 1 point.\n 2. You will only be able to play level 2 if you get 5 points and level 3 if you get 10 points.\n SIMPLE RULES LET'S PLAY\n\n"
 );
+
+console.log("Just enter 1,2,3 or 0 as answer.");
 
 function play(question, answer) {
   var index = readlineSync.keyInSelect(options, question);
