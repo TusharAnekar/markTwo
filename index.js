@@ -2,8 +2,6 @@ var readlineSync = require('readline-sync');
 
 var score = 0;
 
-var options = ['A', 'B', 'C'];
-
 console.log('Welcome to Marvel quiz by Tushar Anekar');
 
 var userName = readlineSync.question('What is your name? ');
